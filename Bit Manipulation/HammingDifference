@@ -1,0 +1,35 @@
+//The Hamming distance between two integers is the number of positions at which the corresponding bits are different, given 2 integers x and y calculate the Hamming Difference
+
+func hammingDistance(_ x: Int, _ y: Int) -> Int {
+    let difference = x ^ y
+    //^ xor -> compares their binary and returns another binary where 0 means equal digit, and 1 is not equal digit
+    //ex: 2 - 010
+    //    6 - 110
+    //2 ^ 6 returns 100
+    let result = String(difference, radix: 2, uppercase: false).filter { $0 == "1" }.count
+    return result
+}
+
+//radix - the base
+//ex: binary uses base 2
+//log is base 10, etc
+
+
+func hammingDistance2(_ x: Int, _ y: Int) -> Int {
+    let difference = x ^ y
+    return difference.nonzeroBitCount
+}
+
+func hammingDistance3(x: Int,y: Int)->Int {
+    var count = 0
+    var difference = x^y
+    while(difference != 0) {
+    count += (difference&1)
+        //& compares difference to 1 sees if last digit is == 1
+        //gives 1 for true, gives 0 for false
+        //adds to count
+        difference = difference >> 1
+        }
+    return count
+    
+}

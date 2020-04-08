@@ -6,4 +6,4 @@
 
 ## Math
 
-[Number Pattern](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Number%20Patterns%20(Nim%20Game))
+[Number Pattern (Nim Game)](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Number%20Patterns%20(Nim%20Game))

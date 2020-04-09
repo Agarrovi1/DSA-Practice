@@ -1,0 +1,12 @@
+func traverse<T>(node: LinkedNode<T>?, onVisit: (LinkedNode<T>) -> Void) {
+    guard let node = node else {return}
+    onVisit(node)
+    traverse(node: node.next, onVisit: onVisit)
+}
+
+let node1 = LinkedNode(val: 1)
+let node2 = LinkedNode(val: 2)
+node1.next = node2
+traverse(node: node1) { (eachNode) in
+    print(eachNode.val)
+}

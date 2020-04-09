@@ -6,6 +6,8 @@
 
 ## Linked List
 
+[ListNode definition](https://github.com/Agarrovi1/DSA-Practice/blob/master/LinkedList/ListNode)
+
 [Cycle I](https://github.com/Agarrovi1/DSA-Practice/blob/master/LinkedList/Cycle%20I)
 
 [Cycle II](https://github.com/Agarrovi1/DSA-Practice/blob/master/LinkedList/Cycle%20II)

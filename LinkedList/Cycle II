@@ -1,0 +1,25 @@
+//find the node where cycle begins
+
+func detectCycle(_ head: ListNode?) -> ListNode? {
+        var reachedCycle = false
+        var tortise = head
+        var hare = head
+        while hare?.next != nil || hare?.next?.next != nil {
+            if reachedCycle {
+                if tortise === hare {
+                    return tortise
+                }
+                tortise = tortise?.next
+                hare = hare?.next
+            } else {
+                tortise = tortise?.next
+                hare = hare?.next?.next
+                
+                if tortise === hare {
+                    hare = head
+                    reachedCycle = true
+                }
+            }
+        }
+        return nil
+    }

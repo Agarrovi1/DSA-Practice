@@ -1,0 +1,15 @@
+AKA:
+Tortise and Hare
+The Runner
+Floyd
+
+func middleNode2<T>(_ head: LinkedNode<T>?) -> LinkedNode<T>? {
+    var slow = head
+    var fast = head
+    while fast?.next?.next != nil || fast?.next != nil {
+        fast = fast?.next?.next
+        slow = slow?.next
+        
+    }
+    return slow
+}

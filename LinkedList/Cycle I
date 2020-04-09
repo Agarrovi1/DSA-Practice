@@ -1,0 +1,13 @@
+func hasCycle(_ head: ListNode?) -> Bool {
+        var tortise = head
+        var hare = head
+        while hare?.next != nil || hare?.next?.next != nil { 
+            tortise = tortise?.next
+            hare = hare?.next?.next
+            if tortise === hare {
+                return true
+            }
+            
+        }
+        return false
+    }

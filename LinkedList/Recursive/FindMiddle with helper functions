@@ -1,0 +1,17 @@
+func findCount<T>(head: LinkedNode<T>?) -> Int {
+    guard let head = head else {return 0}
+    return 1 + findCount(head: head)
+}
+
+
+func getNode<T>(at index: Int, startingAt head: LinkedNode<T>?) -> LinkedNode<T>? {
+    guard let head = head else {return nil}
+    guard index != 0 else {return head}
+    return getNode(at: index - 1, startingAt: head.next)
+}
+
+func middleNode<T>(head: LinkedNode<T>?) -> LinkedNode<T>? {
+    guard let head = head else {return nil}
+    let count = findCount(head: head)
+    return getNode(at: count / 2, startingAt: head)
+}

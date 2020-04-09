@@ -1,0 +1,28 @@
+func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+        var arrayA: [ListNode] = []
+        var arrayB: [ListNode] = []
+        
+        var pointerA = headA
+        var pointerB = headB
+        
+        while pointerA != nil {
+            arrayA.append(pointerA!)
+            pointerA = pointerA?.next
+        }
+        while pointerB != nil {
+            arrayB.append(pointerB!)
+            pointerB = pointerB?.next
+        }
+        var earliestCommonNode: ListNode? = nil
+        while !arrayA.isEmpty && !arrayB.isEmpty {
+            let nodeA = arrayA.popLast()!
+            let nodeB = arrayB.popLast()!
+            if nodeA === nodeB {
+                earliestCommonNode = nodeA
+            } else {
+                break
+            }
+        }
+        return earliestCommonNode
+        
+    }

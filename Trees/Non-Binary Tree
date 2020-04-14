@@ -1,0 +1,8 @@
+class NonBinaryTreeNode {
+    let children: [NonBinaryTreeNode]
+    let val: Int
+    init(val: Int, children: [NonBinaryTreeNode]) {
+        self.val = val
+        self.children = children
+    }
+}

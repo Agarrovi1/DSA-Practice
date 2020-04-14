@@ -1,0 +1,57 @@
+BST are ordered when adding new nodes the node with value less than the parent
+is on the left and the higher value is on the right
+
+
+class TreeNode<T> {
+    let val: T
+    var left: TreeNode?
+    var right: TreeNode?
+    init(val: T) {
+        self.val = val
+    }
+}
+
+class BinaryTree<T: Comparable> {
+    var root: TreeNode<T>?
+
+    func search(element: T) {
+        recursiveSearch(root, element)
+    }
+    private func recursiveSearch(_ rootNode: TreeNode<T>?, _ element: T) {
+        guard let rootNode = rootNode else {
+            print("cant find \(element)")
+            return
+        }
+        if element > rootNode.val {
+            recursiveSearch(rootNode.right, element)
+        } else if element < rootNode.val {
+            recursiveSearch(rootNode.left, element)
+        } else {
+            print("found \(element)")
+        }
+    }
+
+    func insert(node: TreeNode<T>) {
+        recursiveInsert(root, node)
+    }
+
+    private func recursiveInsert(_ rootNode: TreeNode<T>?, _ node: TreeNode<T>) {
+        guard let rootNode = rootNode else {
+            root = node
+            return
+        }
+        if node.val > rootNode.val {
+            if let right = rootNode.right {
+                recursiveInsert(right, node)
+            } else {
+                rootNode.right = node
+            }
+        } else {
+            if let left = rootNode.left {
+                recursiveInsert(left, node)
+            } else {
+                rootNode.left = node
+            }
+        }
+    }
+}

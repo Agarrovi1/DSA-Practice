@@ -1,0 +1,51 @@
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Given binary tree [3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its minimum depth = 2.
+
+public class TreeNode {
+    public var val: Int
+    public var left: TreeNode?
+    public var right: TreeNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.left = nil
+        self.right = nil
+    }
+}
+
+func minDepth(_ root: TreeNode?) -> Int {
+    guard let root = root else {
+        return 0
+    }
+    var minLevel = 0
+    var queue = [root]
+    while !queue.isEmpty {
+        minLevel += 1
+        for _ in 0..<queue.count {
+            let current = queue.removeFirst()
+            if current.left == nil && current.right == nil {
+                return minLevel
+            }
+            if let right = current.right {
+                queue.append(right)
+            }
+            if let left = current.left {
+                queue.append(left)
+            }
+        }
+    }
+    return minLevel
+}

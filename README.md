@@ -25,3 +25,19 @@
 ## Math
 
 [Number Pattern (Nim Game)](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Number%20Patterns%20(Nim%20Game))
+
+## Trees
+
+[Binary Search Tree](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/Binary%20Search%20Tree)
+
+[Distributing Coins](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/Distributing%20Coins)
+
+[Heap](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/Heap)
+
+[Increasing Binary Search Tree](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/IncreasingBTS)
+
+[InvertTree](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/InvertTree)
+
+[Non-Binary Tree](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/Non-Binary%20Tree)
+
+[MinDepth](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/minDepth)

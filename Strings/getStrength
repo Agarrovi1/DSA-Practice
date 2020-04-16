@@ -1,0 +1,31 @@
+Estimating the strength of any password is an important aspect of Information Security. 
+In this challenge, your task is to calculate the strength of a given password in terms of 
+weights assigned to the characters.
+
+A password consists of English lowercase letters only.
+Each English lowercase letter has assigned an integer weight in the range from 
+0 to 25 inclusive in such a way that the weight of letter  is given explicitly and 
+weights of other letters follow in cyclic order. 
+
+func getStrength(password: String, weight_a: Int) -> Int {
+    var weight = weight_a
+    var letterToWeight = [String:Int]()
+    
+    for letter in "abcdefghijklmnopqrstuvwxyz" {
+        if weight > 25 {
+            weight = 0
+        }
+        letterToWeight["\(letter)"] = weight
+        weight += 1
+    }
+    print(letterToWeight)
+    
+    var strength = 0
+    for letter in password.lowercased() {
+        if let value = letterToWeight["\(letter)"] {
+            strength += value
+        }
+    }
+    return strength
+
+}

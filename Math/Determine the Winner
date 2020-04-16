@@ -1,0 +1,39 @@
+A deck of cards contains 52 cards, where each card has a suit and a number written on it. 
+There are 4 suits, namely A, B, C and D, and numbers on cards are from range 1 to 13.
+
+Before the game starts, one of the suits is decided to be called the winning suit.
+Then, the play begins and two players play exactly  rounds as follows:
+
+first, each player draws a single card from the deck
+
+if one of the players drew a card of the winning suit and the other did not,
+then the player who drew a card of the winning suit wins the round
+
+otherwise, the numbers written on the cards decide:
+if one player drew a card with a greater number on it than the other player,
+the player with the greater number wins, otherwise, if both players drew cards with the same numbers, 
+the round ends in a draw
+
+after the round is ended, the players return the cards they drew into the deck
+
+Given the cards the players drew in each round, determine the result of each round of the game.
+
+func getRoundResult(winning_suit: Character, suit1: Character, number1: Int, suit2: Character, number2: Int) -> String {
+    if suit1 == winning_suit, suit2 != winning_suit {
+        return "Player 1 wins"
+    }
+    if suit2 == winning_suit, suit1 != winning_suit {
+        return "Player 2 wins"
+    }
+    
+    if number1 == number2 {
+        return "Draw"
+    }
+    if number1 > number2 {
+        return "Player 1 wins"
+    } else {
+        return "Player 2 wins"
+    }
+    
+
+}

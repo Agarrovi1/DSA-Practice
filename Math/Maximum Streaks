@@ -1,0 +1,42 @@
+A coin was tossed numerous times. 
+You need to find the longest streak of tosses resulting "Heads" and the longest streak of tosses resulting in "Tails".
+
+func getMaxStreaks(toss: [String]) -> [Int] {
+    var maxHeads = 0
+    var maxTails = 0
+    var consecutive: [String] = []
+    
+    for coin in toss {
+        if let coinBefore = consecutive.last {
+            if coin == coinBefore {
+                consecutive.append(coin)
+                if coin == "Heads", maxHeads < consecutive.count {
+                    maxHeads = consecutive.count
+                }
+                if coin == "Tails", maxTails < consecutive.count {
+                    maxTails = consecutive.count
+                }
+            } else {
+                consecutive = []
+                
+                consecutive.append(coin)
+            if coin == "Heads", maxHeads < consecutive.count {
+                maxHeads = consecutive.count
+            }
+            if coin == "Tails", maxTails < consecutive.count {
+                maxTails = consecutive.count
+            }
+                
+            }
+        } else {
+            consecutive.append(coin)
+            if coin == "Heads", maxHeads < consecutive.count {
+                maxHeads = consecutive.count
+            }
+            if coin == "Tails", maxTails < consecutive.count {
+                maxTails = consecutive.count
+            }
+        }
+    }
+    return [maxHeads, maxTails]
+}

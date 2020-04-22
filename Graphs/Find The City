@@ -1,0 +1,63 @@
+There are n cities numbered from 0 to n-1. 
+Given the array edges where edges[i] = [fromi, toi, weighti] represents a bidirectional
+and weighted edge between cities fromi and toi, and given the integer distanceThreshold.
+
+Return the city with the smallest number of cities that are reachable through some path 
+and whose distance is at most distanceThreshold, If there are multiple such cities,
+return the city with the greatest number.
+
+Notice that the distance of a path connecting cities i and j is equal 
+to the sum of the edges' weights along that path.
+
+Floyd–Warshall algorithm
+
+func heightChecker(_ heights: [Int]) -> Int {
+    let sorted = heights.sorted()
+    var result = 0
+    
+    for i in 0..<heights.count {
+        if heights[i] != sorted[i] {
+           result += 1
+        }
+    }
+    return result
+}
+func findTheCity(_ n: Int, _ edges: [[Int]], _ distanceThreshold: Int) -> Int {
+      
+    var graph = Array(repeating: Array(repeating: 10000, count: n), count: n)
+    
+    for edge in edges {
+        let from = edge[0]
+        let to = edge[1]
+        let weight = edge[2]
+        graph[from][to] = weight
+        graph[to][from] = weight
+    }
+    
+    for k in 0..<n {
+        for i in 0..<n {
+            for j in 0..<n {
+                graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+            }
+        }
+    }
+    
+    var ans = 0
+    var min = n - 1
+    
+    for i in 0..<n {
+        var neighborCount = 0
+        for j in 0..<n {
+            if i == j { continue }
+            if graph[i][j] <= distanceThreshold {
+                neighborCount += 1
+            }
+        }
+        
+        if neighborCount <= min {
+            ans = i
+            min = neighborCount
+        }
+    }
+    return ans
+  }

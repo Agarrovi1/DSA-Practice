@@ -1,3 +1,13 @@
+Suduko is a logic-based number-placement puzzle. 
+The objective is to fill a 9×9 grid with digits so that each column, each row,
+and each of the nine 3×3 subgrids that compose the grid contains all of the digits from 1 to 9.
+
+In this problem, you will be given a set of input data for a partially filled sudoku puzzle.
+Your task is to determine if it is a valid input. Print "OK" if input is valid. Otherwise print "WRONG INPUT".
+
+Note that an input is valid if no rows, columns, or subgrids contain duplicates.
+
+
 func validate(data: [[Int]]) -> String {
     var rowDict = [Int:[Int]]()
     var columnDict = [Int:[Int]]()

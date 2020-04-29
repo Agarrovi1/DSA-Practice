@@ -1,0 +1,24 @@
+//Cheese
+func isOneBitCharacter(_ bits: [Int]) -> Bool {
+    if bits.count <= 1 {return true}
+    var mapped = bits.map { "\($0)" }
+    if mapped[mapped.count - 1] == "0", mapped[mapped.count - 2] == "0" {return true}
+    var joined = mapped.joined()
+    joined = joined.replacingOccurrences(of: "11", with: "")
+    if joined.count <= 1 {return true}
+    var array = Array(joined)
+    if array[array.count - 1] == "0", array[array.count - 2] == "0" {return true}
+    return false
+}
+
+//see if there is enough spots to have single digit at end or not
+func isOneBitCharacter(_ bits: [Int]) -> Bool {
+    guard let c: Int = bits.count, c > 1 else { return true }
+    
+    var i = 0
+    while i < c {
+        i += bits[i] == 1 ? 2 : 1
+        if i == c - 1 { return true }
+    }
+    return false
+}

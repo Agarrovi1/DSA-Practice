@@ -1,0 +1,21 @@
+func checkRecord(_ s: String) -> Bool {
+    if s.contains("LLL") {
+        return false
+    }
+    var array = [String]()
+    for char in s {
+        if "\(char)" == "P" {
+            continue
+        }
+        if "\(char)" == "A" {
+            if array.contains("A") {
+                return false
+            }
+            array.append("A")
+        }
+        print(array)
+    }
+    return true
+}
+let test = "PPALLP"
+checkRecord(test)

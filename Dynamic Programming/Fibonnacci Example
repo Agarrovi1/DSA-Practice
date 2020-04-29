@@ -1,0 +1,24 @@
+
+//Normal Recursive
+func recursiveFib(n: Int) -> Int {
+    guard n > 2 else { return 1 }
+    return recursiveFib(n: n - 1) + recursiveFib(n: n - 2)
+}
+
+recursiveFib(n: 10) //executes 55 times
+
+
+var fibValues = [0: 0, 1: 1]
+func fib(n:Int) -> Int {
+    if let value = fibValues[n] {
+        return value
+    } else {
+        let value = fib(n: n - 1) + fib(n: n - 2)
+        fibValues[n] = value
+        return value
+    }
+}
+
+fib(n: 10) // executes 10 times
+
+

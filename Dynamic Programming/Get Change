@@ -1,0 +1,45 @@
+
+// denom = {25, 10, 5, 1}
+// target = 50
+// 25 25
+
+// denom = { 3, 2, 1}
+// target = 5
+// 3, 2
+
+
+func getChange(for value: Int, denom: [Int]) -> [Int] {
+    guard value > 0 else { return [] }
+    var cache = [Int: [Int]]()
+    
+    func recursiveChange(for value: Int) -> [Int] {
+        guard value > 0 else { return [] }
+        
+        if let cachedValue = cache[value] {
+            return cachedValue
+        }
+        
+        var potentialMatrix = [[Int]]()
+        
+        for coin in denom {
+            if value - coin >= 0 {
+              var potentialSet = [coin]
+                potentialSet.append(contentsOf: recursiveChange(for: value - coin))
+                potentialMatrix.append(potentialSet)
+            }
+        }
+        
+        if let minSet = potentialMatrix.min(by: {$0.count < $1.count}) {
+            cache[value] = minSet
+            return minSet
+        } else {
+            return []
+        }
+    }
+
+    return recursiveChange(for: value)
+}
+
+getChange(for: 5, denom: [3,2,1])
+
+

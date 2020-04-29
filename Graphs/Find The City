@@ -11,17 +11,6 @@ to the sum of the edges' weights along that path.
 
 Floyd–Warshall algorithm
 
-func heightChecker(_ heights: [Int]) -> Int {
-    let sorted = heights.sorted()
-    var result = 0
-    
-    for i in 0..<heights.count {
-        if heights[i] != sorted[i] {
-           result += 1
-        }
-    }
-    return result
-}
 func findTheCity(_ n: Int, _ edges: [[Int]], _ distanceThreshold: Int) -> Int {
       
     var graph = Array(repeating: Array(repeating: 10000, count: n), count: n)

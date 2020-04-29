@@ -32,6 +32,8 @@
 
 [Divisor Game](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Divisor%20Game)
 
+[One Bit Character](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/One%20Bit%20Character)
+
 [Sudoku](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Sudoku)
 
 ## Trees

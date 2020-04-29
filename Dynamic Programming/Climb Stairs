@@ -1,0 +1,13 @@
+var cache = [Int: Int]()
+func climbStairs(_ n: Int) -> Int {
+    if let value = cache[n] {
+        return value
+    }
+    if n <= 1 {
+        return 1
+    } else {
+        let value  = climbStairs(n-1) + climbStairs(n-2)
+        cache[n] = value
+        return value
+    }
+}

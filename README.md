@@ -30,6 +30,8 @@
 
 [Determine The Winner](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Determine%20the%20Winner)
 
+[Divisor Game](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Divisor%20Game)
+
 [Sudoku](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Sudoku)
 
 ## Trees

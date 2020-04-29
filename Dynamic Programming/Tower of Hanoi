@@ -1,0 +1,9 @@
+func hanoi(from: Stack<Int>, to: Stack<Int>, temp: Stack<Int>, n: Int) {
+    if n == 1 {
+        to.push(from.pop())
+    } else {
+        hanoi(from: from, to: temp, temp: to, n: n - 1)
+        hanoi(from: from, to: to, temp: temp, n: 1)
+        hanoi(from: temp, to: to, temp: from, n: n - 1)
+    }
+}

@@ -26,6 +26,12 @@
 
 [Number Pattern (Nim Game)](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Number%20Patterns%20(Nim%20Game))
 
+[Maximum Streaks](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Maximum%20Streaks)
+
+[Determine The Winner](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Determine%20the%20Winner)
+
+[Sudoku](https://github.com/Agarrovi1/DSA-Practice/blob/master/Math/Sudoku)
+
 ## Trees
 
 [Binary Search Tree](https://github.com/Agarrovi1/DSA-Practice/blob/master/Trees/Binary%20Search%20Tree)

@@ -1,0 +1,12 @@
+func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
+  guard let root = root else  { return 0}
+  var sum = 0
+  if let left = root.left {
+    if left.left == nil && left.right == nil {
+      sum += left.val
+    }
+  }
+  
+  if root.left == nil && root.right == nil { return root.val }
+  return sumOfLeftLeaves(root.right) + sumOfLeftLeaves(root.left)
+}

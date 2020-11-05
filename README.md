@@ -4,6 +4,10 @@
 
 [HammingDifference (xor ^, ampersand &)](https://github.com/Agarrovi1/DSA-Practice/blob/master/Bit%20Manipulation/HammingDifference)
 
+## Graphs
+
+[Graph Definition](https://github.com/Agarrovi1/DSA-Practice/blob/master/Graphs/Graph%20Definition)
+
 ## Linked List
 
 [ListNode definition](https://github.com/Agarrovi1/DSA-Practice/blob/master/LinkedList/ListNode)
